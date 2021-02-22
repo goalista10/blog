@@ -1,0 +1,37 @@
+<h1>Bloggers</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Level</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usersBlogger.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.level %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<h1>Add Blogger</h1>
+<%= form_with scope: :blogger, url: bloggers_everything_path do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :level %>
+    <%= form.number_field  :level %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
