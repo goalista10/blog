@@ -18,12 +18,13 @@ class BloggersController < ApplicationController
     end
 
     def edit
-      @set = :id
+      @set = params[:id]
+      @setuser = Blogger.find(params[:id])
     end
 
     def update
       Blogger.find(params[:id]).update(user_params)
-      #redirect_to bloggers_everything_path 
+      redirect_to bloggers_everything_path 
     end
     
     private
