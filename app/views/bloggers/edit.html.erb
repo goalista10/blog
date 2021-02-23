@@ -1,5 +1,5 @@
-<h1>Edit Blogger <%=@set%></h1>
-<%= form_with(model: @setuser) do |form| %>
+<h1>Edit Blogger <%=@blogger_id%></h1>
+<%= form_with(model: @edit_blogger) do |form| %>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -11,6 +11,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "Edit" %>
+    <%= form.submit %>
   </div>
 <% end %>

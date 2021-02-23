@@ -1,25 +1,23 @@
 class BloggersController < ApplicationController
     def everything
-      @test= "asd"
-      @usersBlogger = Blogger.all
-      @userBlogger = Blogger.new
+      @all_bloggers = Blogger.all
     end
 
     def create
-      @userBlogger = Blogger.new(user_params)
-      @userBlogger.save
+      @new_blogger = Blogger.new(user_params)
+      @new_blogger.save
       redirect_to bloggers_everything_path 
     end
 
     def delete
-      @asd = Blogger.find(params[:format])
-      @asd.destroy
+      @to_be_deleted = Blogger.find(params[:format])
+      @to_be_deleted.destroy
       redirect_to bloggers_everything_path 
     end
 
     def edit
-      @set = params[:id]
-      @setuser = Blogger.find(params[:id])
+      @blogger_id = params[:id]
+      @edit_blogger = Blogger.find(params[:id])
     end
 
     def update
