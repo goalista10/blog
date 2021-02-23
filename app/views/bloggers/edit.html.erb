@@ -1,0 +1,16 @@
+<h1>Edit Blogger <%=@set%></h1>
+<%= form_with scope: :blogger, url: bloggers_everything_path(), method: :patch do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :level %>
+    <%= form.number_field  :level %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Edit" %>
+  </div>
+<% end %>

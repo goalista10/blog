@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get"blog/home"
   get"blog/about"
+  get"bloggers/:id/edit" , to: "bloggers#edit" , as: "edit"
   get"bloggers/everything", to: "bloggers#everything"
   post"bloggers/everything", to: "bloggers#create"
+  delete"bloggers/everything", to: "bloggers#delete"
+  patch"bloggers/everything", to: "bloggers#update" 
   root"blog#home"
 end
