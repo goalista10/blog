@@ -5,8 +5,15 @@ class BloggersController < ApplicationController
 
     def create
       @new_blogger = Blogger.new(user_params)
-      @new_blogger.save
-      redirect_to bloggers_everything_path 
+      if @new_blogger.save
+        everything()
+        render "bloggers/everything"
+        #redirect_to bloggers_everything_path 
+      else
+        @show_error = @new_blogger
+        render "bloggers/fail"
+      end
+      
     end
 
     def delete

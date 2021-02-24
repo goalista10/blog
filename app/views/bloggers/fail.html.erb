@@ -1,0 +1,11 @@
+<h1>General Failure</h1>
+
+<ul>
+<% if @show_error.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+<% end %>
+</ul>
+<!--Why are 2 end required?-->
+<% end %>
+
+

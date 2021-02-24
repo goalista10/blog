@@ -38,10 +38,16 @@ class BlogControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  #POST /bloggers/everything  || bloggers#create
+  #POST /bloggers/everything  || bloggers#create || Success
   test "should respond with redirect when any request goes to POST /bloggers/everything" do
     post bloggers_everything_path, params: { blogger: { name: "Legolas", level: 30 } }
-    assert_response :redirect
+    assert_response :success
+  end
+
+  #POST /bloggers/everything  || bloggers#create || Fail
+  test "should respond with redirect when " do
+    post bloggers_everything_path, params: { blogger: { level: 30 } }
+    assert_response :success
   end
 
   #DELETE /bloggers/everything  || bloggers#delete
