@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get"blog/home"
   get"blog/about"
   
-  get"bloggers/:id/edit" , to: "bloggers#edit" , as: "edit"
+  get"bloggers/edit/:id" , to: "bloggers#edit" , as: "edit"
   get"bloggers/everything", to: "bloggers#everything"
   
   post"bloggers/everything", to: "bloggers#create"
