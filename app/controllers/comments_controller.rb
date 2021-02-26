@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
     def delete
         @to_be_deleted = Blogger.find(params[:id]).comments.find(params[:format])
         @to_be_deleted.destroy
-        redirect_to blogger_comment_path 
+        redirect_to blogger_comment_page_path 
     end
 
     def edit
