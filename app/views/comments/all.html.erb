@@ -1,0 +1,33 @@
+<h1>Comments</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Comment</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @all_comments.each do |comment| %>
+      <tr>
+        <td><%= comment.body %></td>
+        <td><%= link_to 'Edit', blogger_comment_edit_path(params[:id],comment.id) %></td>
+        <td><%= link_to 'Destroy', blogger_comment_page_path(params[:id],comment.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<h1>Add Comment</h1>
+<%= form_with model: [@blogger,@add_comment], url: blogger_comment_page_path ,local: true do |form| %>
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_field :body %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
