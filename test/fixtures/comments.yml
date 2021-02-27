@@ -2,8 +2,8 @@
 
 one:
   body: MyString
-  Blogger_id: 1
+  blogger_id: 1
 
 two:
   body: MyString
-  Blogger_id: 1
+  blogger_id: 1

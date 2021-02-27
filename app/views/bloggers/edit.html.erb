@@ -1,13 +1,13 @@
 <h1>Edit Blogger <%=@blogger_id%></h1>
 <%= form_with(model: @edit_blogger) do |form| %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="mb-3">
+    <%= form.label :name ,class:"form-label"%>
+    <%= form.text_field :name , class:"form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :level %>
-    <%= form.number_field  :level %>
+  <div class="mb-3">
+    <%= form.label :level ,class:"form-label"%>
+    <%= form.number_field  :level , class:"form-control"%>
   </div>
 
   <div class="actions">

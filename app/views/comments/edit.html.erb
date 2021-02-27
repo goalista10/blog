@@ -1,8 +1,8 @@
 <h1>Edit Comment</h1>
 <%= form_for @to_be_updated ,url: comment_path(params[:id],params[:cid]) do |form| %>
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_field :body %>
+  <div class="mb-3">
+    <%= form.label :comment,class:"form-label" %>
+    <%= form.text_field :body, class:"form-control" %>
   </div>
 
   <div class="actions">

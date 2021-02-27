@@ -1,5 +1,5 @@
 <h1>Comments</h1>
-<table class="table table-striped">
+<table class="table table-hover align-middle">
   <thead>
     <tr>
       <th>Comment</th>
@@ -11,8 +11,8 @@
     <% @all_comments.each do |comment| %>
       <tr>
         <td><%= comment.body %></td>
-        <td><%= link_to 'Edit', blogger_comment_edit_path(params[:id],comment.id) %></td>
-        <td><%= link_to 'Destroy', blogger_comment_page_path(params[:id],comment.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', blogger_comment_edit_path(params[:id],comment.id) ,class:"btn btn-warning btn-sm"%></td>
+        <td><%= link_to 'Destroy', blogger_comment_page_path(params[:id],comment.id), method: :delete, data: { confirm: 'Are you sure?' } ,class:"btn btn-danger btn-sm"%></td>
       </tr>
     <% end %>
   </tbody>
@@ -21,9 +21,9 @@
 <br>
 <h1>Add Comment</h1>
 <%= form_with model: [@blogger,@add_comment], url: blogger_comment_page_path ,local: true do |form| %>
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_field :body %>
+  <div class="mb-3">
+    <%= form.label :comment ,class:"form-label"%>
+    <%= form.text_field :body , class:"form-control"%>
   </div>
 
   <div class="actions">
